@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { WHATSAPP_PHONE } from '../data/mandirs';
 
 interface VastuModalProps {
@@ -7,6 +7,17 @@ interface VastuModalProps {
 }
 
 export const VastuModal: React.FC<VastuModalProps> = ({ isOpen, onClose }) => {
+  // Lock background scroll when open
+  useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
@@ -14,16 +25,19 @@ export const VastuModal: React.FC<VastuModalProps> = ({ isOpen, onClose }) => {
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-xs animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/75 backdrop-blur-xs animate-in fade-in duration-200"
     >
-      <div className="bg-[#fcf9f4] border border-[#d4c3bc] rounded-2xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6">
+      <div className="bg-[#fcf9f4] border-t sm:border border-[#d4c3bc] rounded-t-3xl sm:rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6 overscroll-contain">
+        {/* Mobile drag handle hint */}
+        <div className="sm:hidden w-12 h-1 bg-[#d4c3bc] rounded-full mx-auto -mt-1 mb-2" />
+
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 sm:top-5 sm:right-5 text-[#50443f] hover:text-[#250f03] p-2 rounded-full hover:bg-[#f0ede9] transition-colors z-20"
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 text-[#50443f] hover:text-[#250f03] w-11 h-11 rounded-full hover:bg-[#f0ede9] flex items-center justify-center transition-colors z-20 active:scale-90"
           aria-label="Close modal"
         >
-          <span className="material-symbols-outlined text-xl sm:text-2xl">close</span>
+          <span className="material-symbols-outlined text-2xl">close</span>
         </button>
 
         {/* Modal Header */}
@@ -97,9 +111,9 @@ export const VastuModal: React.FC<VastuModalProps> = ({ isOpen, onClose }) => {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-2.5 sm:py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs active:scale-95 min-h-[42px]"
+            className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs active:scale-95 min-h-[46px]"
           >
-            <span className="material-symbols-outlined text-sm">chat</span>
+            <span className="material-symbols-outlined text-base">chat</span>
             <span>WhatsApp Vastu Sthapati</span>
           </a>
         </div>

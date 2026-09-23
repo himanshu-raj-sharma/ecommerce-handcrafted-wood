@@ -12,6 +12,7 @@ import { CatalogView } from './components/CatalogView';
 import { CraftsmanshipView } from './components/CraftsmanshipView';
 import { CustomMandirBuilder } from './components/CustomMandirBuilder';
 import { WishlistView } from './components/WishlistView';
+import { MobileBottomNav } from './components/MobileBottomNav';
 import { VastuModal } from './components/VastuModal';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { Footer } from './components/Footer';
@@ -24,13 +25,17 @@ export const App: React.FC = () => {
   const [isVastuModalOpen, setIsVastuModalOpen] = useState<boolean>(false);
   const [catalogPlacement, setCatalogPlacement] = useState<string>('All');
 
-  // Persisted Wishlist State
+  // Persisted Wishlist State (starts empty when nothing is added)
   const [wishlistIds, setWishlistIds] = useState<string[]>(() => {
     try {
       const saved = localStorage.getItem('deva_vihara_wishlist');
-      return saved ? JSON.parse(saved) : ['dv-001'];
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) return parsed;
+      }
+      return [];
     } catch {
-      return ['dv-001'];
+      return [];
     }
   });
 
@@ -101,7 +106,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Body depending on Active Tab */}
-      <main className="flex-1">
+      <main className="flex-1 pb-16 md:pb-0">
         {activeTab === 'home' && (
           <>
             {/* Hero Section */}
@@ -186,6 +191,17 @@ export const App: React.FC = () => {
         onScrollToStudio={scrollToStudio}
       />
 
+      {/* Mobile Sticky Bottom Navigation (Touch Ergonomic) */}
+      <MobileBottomNav
+        activeTab={activeTab}
+        onTabChange={(tab) => {
+          setActiveTab(tab);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onScrollToStudio={scrollToStudio}
+        wishlistCount={wishlistIds.length}
+      />
+
       {/* Vastu Placement Guide Modal */}
       <VastuModal
         isOpen={isVastuModalOpen}
@@ -201,14 +217,14 @@ export const App: React.FC = () => {
         onToggleWishlist={handleToggleWishlist}
       />
 
-      {/* Persistent Floating WhatsApp Consultation Button */}
+      {/* Persistent Floating WhatsApp Consultation Button (Positioned above mobile bottom nav) */}
       <a
         href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
           'Namaste Deva Vihara! I would like to consult on a wooden home temple.'
         )}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 md:px-4 md:py-3 rounded-full shadow-2xl flex items-center gap-2 hover:scale-105 active:scale-95 transition-all group"
+        className="fixed bottom-20 right-4 sm:bottom-22 sm:right-6 md:bottom-6 md:right-6 z-30 bg-[#25D366] hover:bg-[#20ba59] text-white p-3 md:px-4 md:py-3 rounded-full shadow-2xl flex items-center gap-2 hover:scale-105 active:scale-95 transition-all group"
         title="Chat with Temple Sthapati on WhatsApp"
         aria-label="Chat on WhatsApp"
       >

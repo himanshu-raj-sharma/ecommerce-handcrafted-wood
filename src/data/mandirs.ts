@@ -17,7 +17,7 @@ export const MANDIR_CATALOG: MandirProduct[] = [
     drawer: 'Dual Aarti Pullout + Samagri Trays',
     price: '₹78,000',
     numericPrice: 78000,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw=s1600',
     featured: true,
     vastuTag: 'North-East (Ishanya) Consecrated',
     description: 'Masterwork floor-standing temple adorned with multi-tiered shikhara, 4 hand-fluted solid teak stambhas, and cast brass kalash finial. Engineered according to Sthapatya Veda golden ratio standards.',
@@ -40,7 +40,7 @@ export const MANDIR_CATALOG: MandirProduct[] = [
     drawer: 'Concealed Incense Tray',
     price: '₹48,500',
     numericPrice: 48500,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDDe2PJpporF0BkYOQEjFEruJ_OFQLipsOgWT3nJ57XiD_QSdWCYw6C0Ko28SRFteFpxJGTQIcAlr_q9ob2Pz6bLVOaw4U4e8IgB8mUaTwe4Ja1mBWWwoJKBPaniNSvTZYO1YU2mIvzHG10snenoW9BZ5B_toPUVN35gAAXx3RwjuQXrK9h84GroSerjPtyrMmo34kBnVBm8zQci5ZE7w_Ktg4jVQgV6mvyhfJD3cw5ODHbWZo_pxM9Q',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDDe2PJpporF0BkYOQEjFEruJ_OFQLipsOgWT3nJ57XiD_QSdWCYw6C0Ko28SRFteFpxJGTQIcAlr_q9ob2Pz6bLVOaw4U4e8IgB8mUaTwe4Ja1mBWWwoJKBPaniNSvTZYO1YU2mIvzHG10snenoW9BZ5B_toPUVN35gAAXx3RwjuQXrK9h84GroSerjPtyrMmo34kBnVBm8zQci5ZE7w_Ktg4jVQgV6mvyhfJD3cw5ODHbWZo_pxM9Q=s1600',
     featured: true,
     vastuTag: 'Space-Saving Ishanya Altar',
     description: 'Wall-suspended architectural shrine featuring concealed heavy-duty brass brackets, ambient backlit sacred OM symbol, and hanging cast bells for serene daily prayer in modern apartments.',
@@ -63,7 +63,7 @@ export const MANDIR_CATALOG: MandirProduct[] = [
     drawer: 'Triple Velvet Drawers',
     price: '₹56,000',
     numericPrice: 56000,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw=s1600',
     featured: true,
     vastuTag: 'Classical Shikhara Sthapatya',
     description: 'Hand-sculpted peacock and lotus archway with deep grain Sheesham wood. Includes heavy-gauge brass bells tuned to acoustic resonance and triple velvet-lined storage drawers.',
@@ -86,7 +86,7 @@ export const MANDIR_CATALOG: MandirProduct[] = [
     drawer: 'Pullout Diya Tray + Drawer',
     price: '₹52,000',
     numericPrice: 52000,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDDe2PJpporF0BkYOQEjFEruJ_OFQLipsOgWT3nJ57XiD_QSdWCYw6C0Ko28SRFteFpxJGTQIcAlr_q9ob2Pz6bLVOaw4U4e8IgB8mUaTwe4Ja1mBWWwoJKBPaniNSvTZYO1YU2mIvzHG10snenoW9BZ5B_toPUVN35gAAXx3RwjuQXrK9h84GroSerjPtyrMmo34kBnVBm8zQci5ZE7w_Ktg4jVQgV6mvyhfJD3cw5ODHbWZo_pxM9Q',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDDe2PJpporF0BkYOQEjFEruJ_OFQLipsOgWT3nJ57XiD_QSdWCYw6C0Ko28SRFteFpxJGTQIcAlr_q9ob2Pz6bLVOaw4U4e8IgB8mUaTwe4Ja1mBWWwoJKBPaniNSvTZYO1YU2mIvzHG10snenoW9BZ5B_toPUVN35gAAXx3RwjuQXrK9h84GroSerjPtyrMmo34kBnVBm8zQci5ZE7w_Ktg4jVQgV6mvyhfJD3cw5ODHbWZo_pxM9Q=s1600',
     featured: true,
     vastuTag: 'Sattvic Acoustic Resonance',
     description: 'Chiseled filigree lattice back panel emitting soothing indirect warm illumination. Equipped with solid brass diya slideout shelf and ornate carved floral capitals.',
@@ -109,7 +109,7 @@ export const MANDIR_CATALOG: MandirProduct[] = [
     drawer: '4 Sacred Storage Drawers',
     price: '₹94,000',
     numericPrice: 94000,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw=s1600',
     featured: false,
     vastuTag: 'Royal Haveli Architecture',
     description: 'The pinnacle of hereditary temple carpentry. Towering 6-foot temple with dual kalash finials, 12 tuned brass ghantis, and four expansive drawers for scriptures, silver thalis, and sacred items.',
@@ -132,7 +132,7 @@ export const MANDIR_CATALOG: MandirProduct[] = [
     drawer: 'Corner Sliding Plinth',
     price: '₹38,500',
     numericPrice: 38500,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDDe2PJpporF0BkYOQEjFEruJ_OFQLipsOgWT3nJ57XiD_QSdWCYw6C0Ko28SRFteFpxJGTQIcAlr_q9ob2Pz6bLVOaw4U4e8IgB8mUaTwe4Ja1mBWWwoJKBPaniNSvTZYO1YU2mIvzHG10snenoW9BZ5B_toPUVN35gAAXx3RwjuQXrK9h84GroSerjPtyrMmo34kBnVBm8zQci5ZE7w_Ktg4jVQgV6mvyhfJD3cw5ODHbWZo_pxM9Q',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDDe2PJpporF0BkYOQEjFEruJ_OFQLipsOgWT3nJ57XiD_QSdWCYw6C0Ko28SRFteFpxJGTQIcAlr_q9ob2Pz6bLVOaw4U4e8IgB8mUaTwe4Ja1mBWWwoJKBPaniNSvTZYO1YU2mIvzHG10snenoW9BZ5B_toPUVN35gAAXx3RwjuQXrK9h84GroSerjPtyrMmo34kBnVBm8zQci5ZE7w_Ktg4jVQgV6mvyhfJD3cw5ODHbWZo_pxM9Q=s1600',
     featured: false,
     vastuTag: 'Strict 90° North-East Placement',
     description: 'Engineered specifically for 90-degree corner alcoves in urban condominiums. Captures the North-East cosmic energy field without protruding into living space.',
@@ -142,10 +142,10 @@ export const MANDIR_CATALOG: MandirProduct[] = [
 ];
 
 export const BRAND_LOGO_URL =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuD8J12R9uu0kxaFModmzQekSX_F06vu5WeBMIP9yXZW2laq1ZM-wgjVU8MfjXSW0FOw4ke4e_4maTO3oC3rXDovT8j9K7Y0tBI6ZQl4zPUI_9GsZFsCPp1lHqda4xi9exKKAGTFZMKG7DaQmSvWz45KQVUsi3DxZ_-p5prBCFNLkq01hOsSLbahlV5OsqzIz6UKiyvVKbyEGbm9JCXX14fY6e5bq_SDltnxcAqdK3dKMAKmuh7LoW8Akg';
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuD8J12R9uu0kxaFModmzQekSX_F06vu5WeBMIP9yXZW2laq1ZM-wgjVU8MfjXSW0FOw4ke4e_4maTO3oC3rXDovT8j9K7Y0tBI6ZQl4zPUI_9GsZFsCPp1lHqda4xi9exKKAGTFZMKG7DaQmSvWz45KQVUsi3DxZ_-p5prBCFNLkq01hOsSLbahlV5OsqzIz6UKiyvVKbyEGbm9JCXX14fY6e5bq_SDltnxcAqdK3dKMAKmuh7LoW8Akg=s400';
 
 export const ARTISAN_WORKSHOP_IMAGE =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCf1cEex91C03QiJ7O7b2Z--7r1WJMeFiYSUfgaKalkJW02WV_5r6fc35QCkAU17CyxuGxpIftLlRcCPnURuY9AtN7DkfI7skPPvkkgy1ZkksJpcVghbe5N1qxtqkzo2JX1mN4RUp1yPAhpr2WxIuxXXZ-dXWAvW_rJb7MBRfZKsW50Uh491mPorqMcRISJe8qgMj7ZleqISSLC7O5FescF09peHyJnUR-Vxb6JwDJ4iQtnMYCEdqf5EA';
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuCf1cEex91C03QiJ7O7b2Z--7r1WJMeFiYSUfgaKalkJW02WV_5r6fc35QCkAU17CyxuGxpIftLlRcCPnURuY9AtN7DkfI7skPPvkkgy1ZkksJpcVghbe5N1qxtqkzo2JX1mN4RUp1yPAhpr2WxIuxXXZ-dXWAvW_rJb7MBRfZKsW50Uh491mPorqMcRISJe8qgMj7ZleqISSLC7O5FescF09peHyJnUR-Vxb6JwDJ4iQtnMYCEdqf5EA=s1600';
 
 export const WHATSAPP_PHONE = '919820112345';
 export const DISPLAY_PHONE = '+91 98201 12345';

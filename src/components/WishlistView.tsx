@@ -122,7 +122,7 @@ export const WishlistView: React.FC<WishlistViewProps> = ({
                   href={buildWishlistWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 sm:flex-initial bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-all active:scale-95"
+                  className="flex-1 sm:flex-initial bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-all active:scale-95 min-h-[46px]"
                 >
                   <span className="material-symbols-outlined text-base">chat</span>
                   <span>Inquire Shortlist on WhatsApp</span>
@@ -134,7 +134,7 @@ export const WishlistView: React.FC<WishlistViewProps> = ({
                       onClearWishlist();
                     }
                   }}
-                  className="px-3.5 py-2.5 rounded-xl border border-[#d4c3bc] text-[#50443f] hover:text-red-700 hover:border-red-300 text-xs font-semibold transition-colors active:scale-95"
+                  className="px-3.5 py-3 rounded-xl border border-[#d4c3bc] text-[#50443f] hover:text-red-700 hover:border-red-300 text-xs font-semibold transition-colors active:scale-95 min-h-[46px]"
                   title="Clear all saved mandirs"
                 >
                   <span className="material-symbols-outlined text-sm align-middle mr-1">delete_sweep</span>
@@ -171,19 +171,19 @@ export const WishlistView: React.FC<WishlistViewProps> = ({
                       {product.height} H
                     </div>
 
-                    {/* Heart Button (Filled in Wishlist) */}
+                    {/* Heart Button (Filled in Wishlist, min 44x44px target) */}
                     <button
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         onToggleWishlist(product.id);
                       }}
-                      className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 text-rose-600 shadow-md flex items-center justify-center hover:bg-rose-50 hover:scale-110 active:scale-90 transition-all z-10"
+                      className="absolute top-2.5 right-2.5 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-white/95 text-rose-600 shadow-md flex items-center justify-center hover:bg-rose-50 hover:scale-110 active:scale-90 transition-all z-10"
                       title="Remove from wishlist"
                       aria-label="Remove from wishlist"
                     >
                       <span
-                        className="material-symbols-outlined text-xl text-rose-600"
+                        className="material-symbols-outlined text-2xl text-rose-600"
                         style={{ fontVariationSettings: "'FILL' 1" }}
                       >
                         favorite
@@ -224,7 +224,7 @@ export const WishlistView: React.FC<WishlistViewProps> = ({
                         <button
                           type="button"
                           onClick={() => templeBell.playBellTone()}
-                          className="font-semibold text-[#735c00] hover:underline flex items-center gap-1 cursor-pointer"
+                          className="font-semibold text-[#735c00] hover:underline flex items-center gap-1 cursor-pointer py-1"
                           title="Click to hear brass bell tone"
                         >
                           <span className="material-symbols-outlined text-xs">notifications_active</span>
@@ -253,7 +253,7 @@ export const WishlistView: React.FC<WishlistViewProps> = ({
 
                         <button
                           onClick={() => onCustomize(product)}
-                          className="text-xs font-semibold text-[#735c00] hover:underline flex items-center gap-1"
+                          className="text-xs font-semibold text-[#735c00] hover:underline flex items-center gap-1 py-1"
                         >
                           <span className="material-symbols-outlined text-xs">tune</span>
                           <span>Customize</span>
@@ -263,7 +263,7 @@ export const WishlistView: React.FC<WishlistViewProps> = ({
                       <div className="grid grid-cols-2 gap-2">
                         <button
                           onClick={() => onSelectProduct(product)}
-                          className="px-3 py-2 text-xs font-semibold text-[#250f03] border border-[#d4c3bc] hover:border-[#735c00] rounded-xl transition-colors min-h-[38px] active:scale-95 text-center"
+                          className="px-3.5 py-2.5 text-xs font-semibold text-[#250f03] border border-[#d4c3bc] hover:border-[#735c00] rounded-xl transition-colors min-h-[42px] active:scale-95 text-center flex items-center justify-center"
                         >
                           Details
                         </button>
@@ -274,7 +274,7 @@ export const WishlistView: React.FC<WishlistViewProps> = ({
                           )}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-[#25D366] hover:bg-[#20ba59] text-white px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-all active:scale-95 min-h-[38px]"
+                          className="bg-[#25D366] hover:bg-[#20ba59] text-white px-3.5 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-all active:scale-95 min-h-[42px]"
                         >
                           <span className="material-symbols-outlined text-sm">chat</span>
                           <span>Inquire</span>

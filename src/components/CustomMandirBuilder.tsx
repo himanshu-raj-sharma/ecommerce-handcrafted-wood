@@ -262,7 +262,7 @@ export const CustomMandirBuilder: React.FC = () => {
                   return (
                     <label
                       key={feat.id}
-                      className={`flex items-center justify-between p-2.5 sm:p-3 rounded-xl border cursor-pointer transition-all active:scale-[0.99] ${
+                      className={`flex items-center justify-between p-3 sm:p-3.5 rounded-xl border cursor-pointer transition-all active:scale-[0.99] min-h-[48px] select-none ${
                         checked
                           ? 'bg-white border-[#735c00] shadow-xs ring-1 ring-[#fed65b]'
                           : 'bg-[#fcf9f4] border-[#d4c3bc]/60 hover:bg-white'
@@ -273,13 +273,13 @@ export const CustomMandirBuilder: React.FC = () => {
                           type="checkbox"
                           checked={checked}
                           onChange={() => handleToggleFeature(feat.id)}
-                          className="w-4 h-4 accent-[#735c00] rounded"
+                          className="w-5 h-5 accent-[#735c00] rounded"
                         />
                         <span className="text-xs font-semibold text-[#250f03]">
                           {feat.label}
                         </span>
                       </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-[#735c00] shrink-0 ml-2">
+                      <span className="text-xs font-bold text-[#735c00] shrink-0 ml-2">
                         +₹{feat.price.toLocaleString('en-IN')}
                       </span>
                     </label>
@@ -301,21 +301,21 @@ export const CustomMandirBuilder: React.FC = () => {
                   placeholder="Full Name"
                   value={config.name}
                   onChange={(e) => setConfig({ ...config, name: e.target.value })}
-                  className="bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[42px]"
+                  className="bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3.5 py-3 text-xs text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[46px]"
                 />
                 <input
                   type="tel"
                   placeholder="Phone / WhatsApp"
                   value={config.phone}
                   onChange={(e) => setConfig({ ...config, phone: e.target.value })}
-                  className="bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[42px]"
+                  className="bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3.5 py-3 text-xs text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[46px]"
                 />
                 <input
                   type="text"
                   placeholder="City, State / Country"
                   value={config.city}
                   onChange={(e) => setConfig({ ...config, city: e.target.value })}
-                  className="bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[42px]"
+                  className="bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3.5 py-3 text-xs text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[46px]"
                 />
               </div>
             </div>

@@ -87,10 +87,16 @@ export const SanctumStudioSection: React.FC = () => {
           <div className="lg:col-span-8 bg-linear-to-b from-[#1c1009] to-[#25140b] border border-[#735c00]/40 rounded-2xl relative shadow-2xl overflow-hidden flex flex-col justify-between min-h-[380px] sm:min-h-[460px] md:min-h-[500px]">
             {/* Top Bar inside 3D Canvas */}
             <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 z-20 flex items-center justify-between gap-1.5 pointer-events-none">
-              {/* Badge */}
-              <div className="bg-[#140b06]/85 backdrop-blur-xs border border-[#fed65b]/40 text-[#fed65b] text-[10px] sm:text-xs font-bold px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg flex items-center gap-1 shadow-md pointer-events-auto">
-                <span className="material-symbols-outlined text-xs sm:text-sm animate-spin">rotate_90_degrees_ccw</span>
-                <span>360° Rotate</span>
+              {/* Badge & Mobile Gesture Hint */}
+              <div className="flex items-center gap-1.5">
+                <div className="bg-[#140b06]/85 backdrop-blur-xs border border-[#fed65b]/40 text-[#fed65b] text-[10px] sm:text-xs font-bold px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg flex items-center gap-1 shadow-md pointer-events-auto">
+                  <span className="material-symbols-outlined text-xs sm:text-sm animate-spin">rotate_90_degrees_ccw</span>
+                  <span>360° Studio</span>
+                </div>
+                <div className="sm:hidden bg-[#140b06]/80 backdrop-blur-xs border border-[#735c00]/50 text-[#ffdbca] text-[10px] font-medium px-2 py-1 rounded-lg flex items-center gap-1 shadow-md pointer-events-auto">
+                  <span className="material-symbols-outlined text-xs text-[#fed65b]">touch_app</span>
+                  <span>Swipe 3D</span>
+                </div>
               </div>
 
               {/* Utility buttons */}
@@ -98,21 +104,22 @@ export const SanctumStudioSection: React.FC = () => {
                 {/* Ring Temple Bell Chime */}
                 <button
                   onClick={handleRingBell}
-                  className={`bg-[#fed65b] hover:bg-[#fecb3a] text-[#241a00] px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-bold flex items-center gap-1 shadow-md transition-all active:scale-95 ${
+                  className={`bg-[#fed65b] hover:bg-[#fecb3a] text-[#241a00] px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg text-xs font-bold flex items-center gap-1 shadow-md transition-all active:scale-95 min-h-[38px] ${
                     bellRinging ? 'ring-2 ring-amber-300 scale-105' : ''
                   }`}
                   title="Ring authentic brass temple bell"
                 >
-                  <span className="material-symbols-outlined text-xs sm:text-sm">notifications_active</span>
+                  <span className="material-symbols-outlined text-sm">notifications_active</span>
                   <span>Ghanti</span>
                 </button>
 
                 {/* Auto rotate toggle */}
                 <button
                   onClick={handleToggleRotate}
-                  className="bg-[#140b06]/85 hover:bg-[#140b06] text-[#ffdbca] border border-[#735c00]/50 px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-bold flex items-center gap-1 shadow-md transition-all active:scale-95"
+                  className="bg-[#140b06]/85 hover:bg-[#140b06] text-[#ffdbca] border border-[#735c00]/50 px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg text-xs font-bold flex items-center gap-1 shadow-md transition-all active:scale-95 min-h-[38px]"
+                  title="Toggle 360° auto rotation"
                 >
-                  <span className="material-symbols-outlined text-xs sm:text-sm">
+                  <span className="material-symbols-outlined text-sm">
                     {autoRotate ? 'pause' : 'play_arrow'}
                   </span>
                   <span className="hidden sm:inline">{autoRotate ? 'Pause' : 'Auto Spin'}</span>
@@ -121,10 +128,10 @@ export const SanctumStudioSection: React.FC = () => {
                 {/* Reset View */}
                 <button
                   onClick={handleResetView}
-                  className="bg-[#140b06]/85 hover:bg-[#140b06] text-[#ffdbca] border border-[#735c00]/50 p-1 sm:p-1.5 rounded-lg text-xs flex items-center justify-center shadow-md transition-all active:scale-95"
+                  className="bg-[#140b06]/85 hover:bg-[#140b06] text-[#ffdbca] border border-[#735c00]/50 p-2 sm:p-2 rounded-lg text-xs flex items-center justify-center shadow-md transition-all active:scale-95 min-h-[38px] min-w-[38px]"
                   title="Reset Camera View"
                 >
-                  <span className="material-symbols-outlined text-xs sm:text-sm">restart_alt</span>
+                  <span className="material-symbols-outlined text-sm">restart_alt</span>
                 </button>
               </div>
             </div>
@@ -142,33 +149,33 @@ export const SanctumStudioSection: React.FC = () => {
             </div>
 
             {/* Bottom Quick Angle Presets bar (horizontally scrollable on mobile) */}
-            <div className="bg-[#140b06]/90 backdrop-blur-xs border-t border-[#735c00]/30 px-3 py-2 flex items-center justify-between gap-2 text-xs overflow-x-auto no-scrollbar">
-              <span className="text-[#fed65b] font-semibold flex items-center gap-1 shrink-0 text-[10px] sm:text-xs">
+            <div className="bg-[#140b06]/95 backdrop-blur-xs border-t border-[#735c00]/30 px-3 py-2.5 flex items-center justify-between gap-2 text-xs overflow-x-auto no-scrollbar">
+              <span className="text-[#fed65b] font-semibold flex items-center gap-1 shrink-0 text-[11px] sm:text-xs">
                 <span className="material-symbols-outlined text-sm">photo_camera</span>
                 <span className="hidden sm:inline">Views:</span>
               </span>
               <div className="flex items-center gap-1.5 shrink-0">
                 <button
                   onClick={() => handleCameraPreset(0)}
-                  className="px-2.5 py-1 bg-[#25140b] hover:bg-[#3d1f11] text-[#ffdbca] rounded-lg border border-[#735c00]/40 transition-colors text-[10px] sm:text-xs font-medium shrink-0 active:scale-95"
+                  className="px-3 py-1.5 bg-[#25140b] hover:bg-[#3d1f11] text-[#ffdbca] rounded-lg border border-[#735c00]/40 transition-colors text-xs font-medium shrink-0 active:scale-95 min-h-[38px] flex items-center justify-center"
                 >
                   Front (0°)
                 </button>
                 <button
                   onClick={() => handleCameraPreset(0.785)}
-                  className="px-2.5 py-1 bg-[#25140b] hover:bg-[#3d1f11] text-[#ffdbca] rounded-lg border border-[#735c00]/40 transition-colors text-[10px] sm:text-xs font-medium shrink-0 active:scale-95"
+                  className="px-3 py-1.5 bg-[#25140b] hover:bg-[#3d1f11] text-[#ffdbca] rounded-lg border border-[#735c00]/40 transition-colors text-xs font-medium shrink-0 active:scale-95 min-h-[38px] flex items-center justify-center"
                 >
                   Isometric 45°
                 </button>
                 <button
                   onClick={() => handleCameraPreset(1.57)}
-                  className="px-2.5 py-1 bg-[#25140b] hover:bg-[#3d1f11] text-[#ffdbca] rounded-lg border border-[#735c00]/40 transition-colors text-[10px] sm:text-xs font-medium shrink-0 active:scale-95"
+                  className="px-3 py-1.5 bg-[#25140b] hover:bg-[#3d1f11] text-[#ffdbca] rounded-lg border border-[#735c00]/40 transition-colors text-xs font-medium shrink-0 active:scale-95 min-h-[38px] flex items-center justify-center"
                 >
                   Profile 90°
                 </button>
                 <button
                   onClick={() => handleCameraPreset(3.14)}
-                  className="px-2.5 py-1 bg-[#25140b] hover:bg-[#3d1f11] text-[#ffdbca] rounded-lg border border-[#735c00]/40 transition-colors text-[10px] sm:text-xs font-medium shrink-0 active:scale-95"
+                  className="px-3 py-1.5 bg-[#25140b] hover:bg-[#3d1f11] text-[#ffdbca] rounded-lg border border-[#735c00]/40 transition-colors text-xs font-medium shrink-0 active:scale-95 min-h-[38px] flex items-center justify-center"
                 >
                   Rear Jaali
                 </button>

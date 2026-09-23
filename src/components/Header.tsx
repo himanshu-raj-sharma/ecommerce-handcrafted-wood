@@ -62,189 +62,160 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <>
       <header className="bg-[#fcf9f4] top-0 sticky z-40 border-b border-[#d4c3bc]/50 shadow-xs transition-colors">
-        <div className="flex justify-between items-center max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12 h-16 md:h-20 w-full">
-        {/* Brand Logo & Title */}
-        <button
-          onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2.5 md:gap-3 group cursor-pointer text-left focus:outline-none"
-        >
-          <div className="w-9 h-9 md:w-12 md:h-12 rounded-lg p-0.5 border border-[#735c00]/40 shadow-inner bg-[#f0ede9] flex items-center justify-center transition-transform group-hover:scale-105 duration-300 shrink-0">
-            <img
-              src={BRAND_LOGO_URL}
-              alt="Deva Vihara Brand Mark"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-serif text-lg md:text-2xl font-bold text-[#250f03] tracking-wide leading-none group-hover:text-[#735c00] transition-colors">
-              Deva Vihara
-            </span>
-            <span className="text-[9px] md:text-[10px] text-[#50443f] uppercase tracking-[0.16em] md:tracking-[0.2em] font-semibold mt-0.5 md:mt-1">
-              Sacred Sanctuaries
-            </span>
-          </div>
-        </button>
-
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-7 text-xs font-semibold">
+        <div className="flex justify-between items-center gap-4 lg:gap-6 xl:gap-8 max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10 h-16 md:h-20 w-full">
+          {/* Brand Logo & Title */}
           <button
             onClick={() => handleNavClick('home')}
-            className={`transition-all pb-1 ${
-              activeTab === 'home'
-                ? 'text-[#250f03] font-bold border-b-2 border-[#735c00]'
-                : 'text-[#50443f] hover:text-[#250f03]'
-            }`}
+            className="flex items-center gap-2.5 md:gap-3 group cursor-pointer text-left focus:outline-none shrink-0"
           >
-            Home
-          </button>
-          <button
-            onClick={handleStudioClick}
-            className="text-[#50443f] hover:text-[#250f03] transition-colors pb-1 flex items-center gap-1.5"
-          >
-            <span className="material-symbols-outlined text-base text-[#735c00] animate-pulse">
-              view_in_ar
-            </span>
-            <span>3D Mandir Studio</span>
-          </button>
-          <button
-            onClick={() => handleNavClick('catalog')}
-            className={`transition-all pb-1 ${
-              activeTab === 'catalog'
-                ? 'text-[#250f03] font-bold border-b-2 border-[#735c00]'
-                : 'text-[#50443f] hover:text-[#250f03]'
-            }`}
-          >
-            Collection
-          </button>
-          <button
-            onClick={() => handleNavClick('craftsmanship')}
-            className={`transition-all pb-1 ${
-              activeTab === 'craftsmanship'
-                ? 'text-[#250f03] font-bold border-b-2 border-[#735c00]'
-                : 'text-[#50443f] hover:text-[#250f03]'
-            }`}
-          >
-            Craftsmanship
-          </button>
-          <button
-            onClick={() => handleNavClick('custom')}
-            className={`transition-all pb-1 ${
-              activeTab === 'custom'
-                ? 'text-[#250f03] font-bold border-b-2 border-[#735c00]'
-                : 'text-[#50443f] hover:text-[#250f03]'
-            }`}
-          >
-            Custom Mandir
-          </button>
-          <button
-            onClick={() => handleNavClick('wishlist')}
-            className={`transition-all pb-1 flex items-center gap-1.5 ${
-              activeTab === 'wishlist'
-                ? 'text-[#250f03] font-bold border-b-2 border-[#735c00]'
-                : 'text-[#50443f] hover:text-[#250f03]'
-            }`}
-          >
-            <span
-              className={`material-symbols-outlined text-base ${wishlistCount > 0 ? 'text-rose-600' : 'text-[#735c00]'}`}
-              style={wishlistCount > 0 ? { fontVariationSettings: "'FILL' 1" } : undefined}
-            >
-              favorite
-            </span>
-            <span>Wishlist</span>
-            {wishlistCount > 0 && (
-              <span className="px-1.5 py-0.2 bg-rose-600 text-white rounded-full text-[10px] font-bold shadow-xs">
-                {wishlistCount}
+            <div className="w-9 h-9 md:w-12 md:h-12 rounded-lg p-0.5 border border-[#735c00]/40 shadow-inner bg-[#f0ede9] flex items-center justify-center transition-transform group-hover:scale-105 duration-300 shrink-0">
+              <img
+                src={BRAND_LOGO_URL}
+                alt="Deva Vihara Brand Mark"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-serif text-lg md:text-2xl font-bold text-[#250f03] tracking-wide leading-none group-hover:text-[#735c00] transition-colors">
+                Deva Vihara
               </span>
-            )}
+              <span className="text-[9px] md:text-[10px] text-[#50443f] uppercase tracking-[0.16em] md:tracking-[0.2em] font-semibold mt-0.5 md:mt-1">
+                Sacred Sanctuaries
+              </span>
+            </div>
           </button>
-          <button
-            onClick={handleVastuClick}
-            className="text-[#50443f] hover:text-[#250f03] transition-colors pb-1 flex items-center gap-1"
-          >
-            <span className="material-symbols-outlined text-base text-[#735c00]">explore</span>
-            <span>Vastu Guide</span>
-          </button>
-        </nav>
 
-        {/* Right Actions: Search & CTAs */}
-        <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
-          {/* Instant Search Bar */}
-          <div className="relative hidden sm:block w-36 md:w-48 xl:w-60">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => {
-                onSearchChange(e.target.value);
-                if (activeTab !== 'catalog' && e.target.value.trim() !== '') {
-                  onTabChange('catalog');
-                }
-              }}
-              placeholder="Search mandir, teak, jali..."
-              className="w-full bg-[#f6f3ee] border border-[#d4c3bc]/60 rounded-lg pl-9 pr-3 py-1.5 text-xs text-[#1c1c19] placeholder-[#50443f]/60 focus:outline-none focus:border-[#735c00] transition-all"
-            />
-            <span className="material-symbols-outlined absolute left-2.5 top-2 text-[#50443f]/70 text-base pointer-events-none">
-              search
-            </span>
-          </div>
-
-          {/* Quick Wishlist icon button with badge */}
-          <button
-            onClick={() => handleNavClick('wishlist')}
-            className={`relative p-2 text-[#250f03] hover:text-rose-600 focus:outline-none rounded-lg hover:bg-[#f0ede9] transition-colors active:scale-95 ${
-              activeTab === 'wishlist' ? 'bg-rose-50 text-rose-600 ring-1 ring-rose-200' : ''
-            }`}
-            title="View Sacred Wishlist"
-            aria-label="View Saved Wishlist"
-          >
-            <span
-              className={`material-symbols-outlined text-2xl transition-colors ${
-                wishlistCount > 0 ? 'text-rose-600' : 'text-[#50443f]'
+          {/* Desktop Navigation Links with generous breathing room */}
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-7 text-xs font-semibold shrink-0 px-2">
+            <button
+              onClick={() => handleNavClick('home')}
+              className={`transition-all pb-1 ${
+                activeTab === 'home'
+                  ? 'text-[#250f03] font-bold border-b-2 border-[#735c00]'
+                  : 'text-[#50443f] hover:text-[#250f03]'
               }`}
-              style={wishlistCount > 0 ? { fontVariationSettings: "'FILL' 1" } : undefined}
             >
-              favorite
-            </span>
-            {wishlistCount > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 bg-rose-600 text-white font-bold text-[9px] min-w-4 h-4 px-1 rounded-full flex items-center justify-center shadow-xs">
-                {wishlistCount > 9 ? '9+' : wishlistCount}
+              Home
+            </button>
+            <button
+              onClick={handleStudioClick}
+              className="text-[#50443f] hover:text-[#250f03] transition-colors pb-1 flex items-center gap-1.5"
+            >
+              <span className="material-symbols-outlined text-base text-[#735c00] animate-pulse">
+                view_in_ar
               </span>
-            )}
-          </button>
+              <span>3D Mandir Studio</span>
+            </button>
+            <button
+              onClick={() => handleNavClick('catalog')}
+              className={`transition-all pb-1 ${
+                activeTab === 'catalog'
+                  ? 'text-[#250f03] font-bold border-b-2 border-[#735c00]'
+                  : 'text-[#50443f] hover:text-[#250f03]'
+              }`}
+            >
+              Collection
+            </button>
+            <button
+              onClick={() => handleNavClick('craftsmanship')}
+              className={`transition-all pb-1 ${
+                activeTab === 'craftsmanship'
+                  ? 'text-[#250f03] font-bold border-b-2 border-[#735c00]'
+                  : 'text-[#50443f] hover:text-[#250f03]'
+              }`}
+            >
+              Craftsmanship
+            </button>
+            <button
+              onClick={() => handleNavClick('custom')}
+              className={`transition-all pb-1 ${
+                activeTab === 'custom'
+                  ? 'text-[#250f03] font-bold border-b-2 border-[#735c00]'
+                  : 'text-[#50443f] hover:text-[#250f03]'
+              }`}
+            >
+              Custom Mandir
+            </button>
+            <button
+              onClick={handleVastuClick}
+              className="text-[#50443f] hover:text-[#250f03] transition-colors pb-1 flex items-center gap-1"
+            >
+              <span className="material-symbols-outlined text-base text-[#735c00]">explore</span>
+              <span>Vastu Guide</span>
+            </button>
+          </nav>
 
-          {/* Artisan Consult CTA (Desktop) */}
-          <button
-            onClick={() => handleNavClick('custom')}
-            className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 border border-[#735c00] text-[#250f03] text-xs font-semibold rounded-lg hover:bg-[#735c00]/10 transition-all active:scale-95"
-          >
-            <span className="material-symbols-outlined text-sm text-[#735c00]">handyman</span>
-            <span>Consult Artisan</span>
-          </button>
+          {/* Right Actions: Search, Wishlist & WhatsApp with guaranteed viewport fit */}
+          <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 shrink-0">
+            {/* Instant Search Bar */}
+            <div className="relative hidden sm:block w-28 md:w-36 lg:w-40 xl:w-48 transition-all">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => {
+                  onSearchChange(e.target.value);
+                  if (activeTab !== 'catalog' && e.target.value.trim() !== '') {
+                    onTabChange('catalog');
+                  }
+                }}
+                placeholder="Search mandir, teak, jali..."
+                className="w-full bg-[#f6f3ee] border border-[#d4c3bc]/60 rounded-lg pl-8 pr-2.5 py-1.5 text-xs text-[#1c1c19] placeholder-[#50443f]/60 focus:outline-none focus:border-[#735c00] transition-all"
+              />
+              <span className="material-symbols-outlined absolute left-2.5 top-2 text-[#50443f]/70 text-base pointer-events-none">
+                search
+              </span>
+            </div>
 
-          {/* WhatsApp Direct */}
-          <a
-            href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
-              'Hello Deva Vihara Team! I would like to consult with your Temple Sthapati regarding a handcrafted wooden mandir.'
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba59] text-white px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg text-xs font-bold tracking-wide shadow-xs hover:shadow-md transition-all active:scale-95 shrink-0"
-          >
-            <span className="material-symbols-outlined text-base">chat</span>
-            <span className="hidden sm:inline">WhatsApp</span>
-          </a>
+            {/* Quick Wishlist icon button with badge */}
+            <button
+              onClick={() => handleNavClick('wishlist')}
+              className={`relative p-2 text-[#250f03] hover:text-rose-600 focus:outline-none rounded-lg hover:bg-[#f0ede9] transition-colors active:scale-95 shrink-0 ${
+                activeTab === 'wishlist' ? 'bg-rose-50 text-rose-600 ring-1 ring-rose-200' : ''
+              }`}
+              title={wishlistCount > 0 ? `Saved Wishlist (${wishlistCount})` : 'Wishlist (Empty)'}
+              aria-label="View Saved Wishlist"
+            >
+              <span
+                className={`material-symbols-outlined text-2xl transition-colors ${
+                  wishlistCount > 0 ? 'text-rose-600' : 'text-[#50443f]'
+                }`}
+                style={wishlistCount > 0 ? { fontVariationSettings: "'FILL' 1" } : { fontVariationSettings: "'FILL' 0" }}
+              >
+                {wishlistCount > 0 ? 'favorite' : 'favorite_border'}
+              </span>
+              {wishlistCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 bg-rose-600 text-white font-bold text-[9px] min-w-4 h-4 px-1 rounded-full flex items-center justify-center shadow-xs">
+                  {wishlistCount > 9 ? '9+' : wishlistCount}
+                </span>
+              )}
+            </button>
 
-          {/* Mobile hamburger menu button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#250f03] hover:text-[#735c00] focus:outline-none rounded-lg hover:bg-[#f0ede9] transition-colors active:scale-95"
-            aria-label="Toggle Navigation Menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            <span className="material-symbols-outlined text-2xl transition-transform duration-200">
-              {mobileMenuOpen ? 'close' : 'menu'}
-            </span>
-          </button>
-        </div>
+            {/* WhatsApp Direct Consultation CTA - Guaranteed in-view on desktop & mobile */}
+            <a
+              href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
+                'Hello Deva Vihara Team! I would like to consult with your Temple Sthapati regarding a handcrafted wooden mandir.'
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba59] text-white px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs font-bold tracking-wide shadow-xs hover:shadow-md transition-all active:scale-95 shrink-0 whitespace-nowrap"
+              title="Chat with Sthapati on WhatsApp"
+            >
+              <span className="material-symbols-outlined text-base">chat</span>
+              <span className="hidden sm:inline">WhatsApp</span>
+            </a>
+
+            {/* Mobile hamburger menu button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 text-[#250f03] hover:text-[#735c00] focus:outline-none rounded-lg hover:bg-[#f0ede9] transition-colors active:scale-95 shrink-0"
+              aria-label="Toggle Navigation Menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              <span className="material-symbols-outlined text-2xl transition-transform duration-200">
+                {mobileMenuOpen ? 'close' : 'menu'}
+              </span>
+            </button>
+          </div>
       </div>
 
       {/* Mobile Expanded Menu Dropdown (Cleanly slides down below header) */}
@@ -266,9 +237,9 @@ export const Header: React.FC<HeaderProps> = ({
                   }
                 }}
                 placeholder="Search mandirs, teak, finishes..."
-                className="w-full bg-[#f6f3ee] border border-[#d4c3bc] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#1c1c19] placeholder-[#50443f]/70 focus:outline-none focus:border-[#735c00]"
+                className="w-full bg-[#f6f3ee] border border-[#d4c3bc] rounded-xl pl-10 pr-4 py-2.5 text-base sm:text-xs text-[#1c1c19] placeholder-[#50443f]/70 focus:outline-none focus:border-[#735c00] min-h-[44px]"
               />
-              <span className="material-symbols-outlined absolute left-3 top-2.5 text-[#735c00] text-lg pointer-events-none">
+              <span className="material-symbols-outlined absolute left-3 top-3 text-[#735c00] text-lg pointer-events-none">
                 search
               </span>
             </div>
@@ -361,16 +332,20 @@ export const Header: React.FC<HeaderProps> = ({
                 <div className="flex items-center gap-3">
                   <span
                     className={`material-symbols-outlined text-lg ${
-                      wishlistCount > 0 ? 'text-rose-600' : 'text-[#735c00]'
+                      wishlistCount > 0 ? 'text-rose-600' : 'text-[#7a6f68]'
                     }`}
-                    style={wishlistCount > 0 ? { fontVariationSettings: "'FILL' 1" } : undefined}
+                    style={wishlistCount > 0 ? { fontVariationSettings: "'FILL' 1" } : { fontVariationSettings: "'FILL' 0" }}
                   >
-                    favorite
+                    {wishlistCount > 0 ? 'favorite' : 'favorite_border'}
                   </span>
                   <span className="text-sm">Saved Wishlist</span>
                 </div>
-                <span className="text-[10px] font-bold text-rose-700 bg-rose-100 border border-rose-200 px-2 py-0.5 rounded-full">
-                  {wishlistCount} {wishlistCount === 1 ? 'mandir' : 'mandirs'}
+                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
+                  wishlistCount > 0
+                    ? 'text-rose-700 bg-rose-100 border-rose-200'
+                    : 'text-[#50443f] bg-[#f0ede9] border-[#d4c3bc]'
+                }`}>
+                  {wishlistCount > 0 ? `${wishlistCount} ${wishlistCount === 1 ? 'mandir' : 'mandirs'}` : '0 Empty'}
                 </span>
               </button>
 

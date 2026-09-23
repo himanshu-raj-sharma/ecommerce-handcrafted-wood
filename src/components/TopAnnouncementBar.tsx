@@ -31,7 +31,7 @@ export const TopAnnouncementBar: React.FC = () => {
         </div>
         <a
           href={`tel:+${WHATSAPP_PHONE}`}
-          className="shrink-0 text-[#ffe088] hover:text-white transition-colors flex items-center gap-1 font-bold pl-2 border-l border-[#735c00]/50"
+          className="shrink-0 text-[#ffe088] hover:text-white transition-colors flex items-center gap-1 font-bold pl-2.5 border-l border-[#735c00]/50 py-1 min-h-[36px] active:scale-95"
         >
           <span className="material-symbols-outlined text-xs">call</span>
           <span>Call</span>

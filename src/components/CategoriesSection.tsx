@@ -32,8 +32,10 @@ export const CategoriesSection: React.FC<CategoriesSectionProps> = ({
           <div className="lg:col-span-6 bg-[#f7f2ea] border border-[#d4c3bc]/70 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
             <div className="aspect-16/10 w-full overflow-hidden relative bg-[#ede6dc]">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDDe2PJpporF0BkYOQEjFEruJ_OFQLipsOgWT3nJ57XiD_QSdWCYw6C0Ko28SRFteFpxJGTQIcAlr_q9ob2Pz6bLVOaw4U4e8IgB8mUaTwe4Ja1mBWWwoJKBPaniNSvTZYO1YU2mIvzHG10snenoW9BZ5B_toPUVN35gAAXx3RwjuQXrK9h84GroSerjPtyrMmo34kBnVBm8zQci5ZE7w_Ktg4jVQgV6mvyhfJD3cw5ODHbWZo_pxM9Q"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDDe2PJpporF0BkYOQEjFEruJ_OFQLipsOgWT3nJ57XiD_QSdWCYw6C0Ko28SRFteFpxJGTQIcAlr_q9ob2Pz6bLVOaw4U4e8IgB8mUaTwe4Ja1mBWWwoJKBPaniNSvTZYO1YU2mIvzHG10snenoW9BZ5B_toPUVN35gAAXx3RwjuQXrK9h84GroSerjPtyrMmo34kBnVBm8zQci5ZE7w_Ktg4jVQgV6mvyhfJD3cw5ODHbWZo_pxM9Q=s1600"
                 alt="Wall-Mounted Sanctuaries"
+                referrerPolicy="no-referrer"
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-3 left-3 bg-[#250f03]/85 text-[#fed65b] text-[10px] sm:text-[11px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded backdrop-blur-xs">
@@ -56,7 +58,7 @@ export const CategoriesSection: React.FC<CategoriesSectionProps> = ({
                 <span className="text-xs font-semibold text-[#735c00]">Height: 28&quot; – 36&quot;</span>
                 <button
                   onClick={() => onSelectPlacement('Wall Mount')}
-                  className="min-h-[40px] px-2 text-xs font-bold text-[#250f03] hover:text-[#735c00] flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                  className="min-h-[44px] px-3 py-2 text-xs font-bold text-[#250f03] hover:text-[#735c00] flex items-center gap-1 group-hover:translate-x-1 transition-transform active:scale-95"
                 >
                   <span>Explore Wall Mounts</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -69,8 +71,10 @@ export const CategoriesSection: React.FC<CategoriesSectionProps> = ({
           <div className="lg:col-span-6 bg-[#f7f2ea] border border-[#d4c3bc]/70 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
             <div className="aspect-16/10 w-full overflow-hidden relative bg-[#ede6dc]">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw=s1600"
                 alt="Floor-Standing Grand Mandirs"
+                referrerPolicy="no-referrer"
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-3 left-3 bg-[#250f03]/85 text-[#fed65b] text-[10px] sm:text-[11px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded backdrop-blur-xs">
@@ -93,7 +97,7 @@ export const CategoriesSection: React.FC<CategoriesSectionProps> = ({
                 <span className="text-xs font-semibold text-[#735c00]">Height: 48&quot; – 72&quot;</span>
                 <button
                   onClick={() => onSelectPlacement('Floor Standing')}
-                  className="min-h-[40px] px-2 text-xs font-bold text-[#250f03] hover:text-[#735c00] flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                  className="min-h-[44px] px-3 py-2 text-xs font-bold text-[#250f03] hover:text-[#735c00] flex items-center gap-1 group-hover:translate-x-1 transition-transform active:scale-95"
                 >
                   <span>Explore Grand Mandirs</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -122,7 +126,7 @@ export const CategoriesSection: React.FC<CategoriesSectionProps> = ({
               <span className="text-xs font-semibold text-[#735c00]">Height: 32&quot; – 42&quot;</span>
               <button
                 onClick={() => onSelectPlacement('Corner Unit')}
-                className="min-h-[40px] px-2 text-xs font-bold text-[#250f03] hover:text-[#735c00] flex items-center gap-1"
+                className="min-h-[44px] px-3 py-2 text-xs font-bold text-[#250f03] hover:text-[#735c00] flex items-center gap-1 active:scale-95"
               >
                 <span>View Corner Sanctuaries</span>
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>

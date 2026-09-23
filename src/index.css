@@ -1,15 +1,45 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     color: #1c1c19;
     background-color: #fcf9f4;
+    overscroll-behavior-y: none;
   }
 
   h1, h2, h3, .font-serif {
     font-family: 'Playfair Display', Georgia, serif;
   }
+
+  /* Prevent iOS automatic page zoom on form inputs */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input, select, textarea {
+      font-size: 0.875rem;
+    }
+  }
+
+  button, a {
+    touch-action: manipulation;
+  }
+}
+
+/* Safe area insets for notched mobile devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+.bottom-safe {
+  bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .material-symbols-outlined {
@@ -30,6 +60,15 @@
   opacity: 0.05;
 }
 
+/* Hide scrollbar for clean horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -45,3 +84,4 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #735c00;
 }
+

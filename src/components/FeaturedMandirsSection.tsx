@@ -69,7 +69,7 @@ export const FeaturedMandirsSection: React.FC<FeaturedMandirsSectionProps> = ({
                   {product.height} H
                 </div>
 
-                {/* Heart Toggle Button */}
+                {/* Heart Toggle Button (Thumb friendly min 44px) */}
                 <button
                   type="button"
                   onClick={(e) => {
@@ -78,14 +78,14 @@ export const FeaturedMandirsSection: React.FC<FeaturedMandirsSectionProps> = ({
                   }}
                   aria-label={wishlistIds.includes(product.id) ? "Remove from wishlist" : "Add to wishlist"}
                   title={wishlistIds.includes(product.id) ? "Saved in Wishlist" : "Save to Wishlist"}
-                  className={`absolute top-2.5 right-2.5 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 shadow-md active:scale-90 z-10 ${
+                  className={`absolute top-2.5 right-2.5 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center transition-all duration-200 shadow-md active:scale-90 z-10 ${
                     wishlistIds.includes(product.id)
                       ? 'bg-white text-rose-600 hover:bg-rose-50 hover:scale-110'
-                      : 'bg-[#fcf9f4]/85 backdrop-blur-xs text-[#50443f] hover:text-rose-600 hover:bg-white'
+                      : 'bg-[#fcf9f4]/90 backdrop-blur-xs text-[#50443f] hover:text-rose-600 hover:bg-white'
                   }`}
                 >
                   <span
-                    className="material-symbols-outlined text-lg transition-colors"
+                    className="material-symbols-outlined text-2xl transition-colors"
                     style={wishlistIds.includes(product.id) ? { fontVariationSettings: "'FILL' 1" } : undefined}
                   >
                     favorite
@@ -151,10 +151,11 @@ export const FeaturedMandirsSection: React.FC<FeaturedMandirsSectionProps> = ({
                   <div className="flex items-center gap-1.5">
                     <button
                       onClick={() => onSelectProduct(product)}
-                      className="p-2 min-h-[38px] text-xs font-semibold text-[#250f03] border border-[#d4c3bc] hover:border-[#735c00] rounded-xl transition-colors active:scale-95"
+                      className="px-3 py-2 min-h-[42px] text-xs font-semibold text-[#250f03] border border-[#d4c3bc] hover:border-[#735c00] rounded-xl transition-colors active:scale-95 flex items-center justify-center gap-1"
                       title="View Detailed Specifications"
                     >
                       <span className="material-symbols-outlined text-base">info</span>
+                      <span className="text-xs">Details</span>
                     </button>
 
                     <a
@@ -163,7 +164,7 @@ export const FeaturedMandirsSection: React.FC<FeaturedMandirsSectionProps> = ({
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[#25D366] hover:bg-[#20ba59] text-white px-3 py-2 min-h-[38px] rounded-xl text-xs font-bold flex items-center gap-1 shadow-xs transition-all active:scale-95"
+                      className="bg-[#25D366] hover:bg-[#20ba59] text-white px-3.5 py-2 min-h-[42px] rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all active:scale-95"
                     >
                       <span className="material-symbols-outlined text-sm">chat</span>
                       <span>Inquire</span>

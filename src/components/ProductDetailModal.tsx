@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MandirProduct } from '../types/mandir';
 import { templeBell } from './AudioBellPlayer';
 import { WHATSAPP_PHONE } from '../data/mandirs';
@@ -18,6 +18,17 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   wishlistIds,
   onToggleWishlist
 }) => {
+  // Lock background scroll when open on mobile
+  useEffect(() => {
+    if (product) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [product]);
+
   if (!product) return null;
 
   const isWishlisted = wishlistIds.includes(product.id);
@@ -27,16 +38,19 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-xs animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/75 backdrop-blur-xs animate-in fade-in duration-200"
     >
-      <div className="bg-[#fcf9f4] border border-[#d4c3bc] rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6">
+      <div className="bg-[#fcf9f4] border-t sm:border border-[#d4c3bc] rounded-t-3xl sm:rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6 overscroll-contain">
+        {/* Mobile drag handle hint */}
+        <div className="sm:hidden w-12 h-1 bg-[#d4c3bc] rounded-full mx-auto -mt-1 mb-2" />
+
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 sm:top-5 sm:right-5 text-[#50443f] hover:text-[#250f03] p-2 rounded-full hover:bg-[#f0ede9] transition-colors z-20"
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 text-[#50443f] hover:text-[#250f03] w-11 h-11 rounded-full hover:bg-[#f0ede9] flex items-center justify-center transition-colors z-20 active:scale-90"
           aria-label="Close modal"
         >
-          <span className="material-symbols-outlined text-xl sm:text-2xl">close</span>
+          <span className="material-symbols-outlined text-2xl">close</span>
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-start">
@@ -141,47 +155,49 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 </span>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                 <a
                   href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
                     `Hello Deva Vihara! I wish to purchase ${product.title} (${product.id}, ${product.price}). Please send payment options and dispatch schedule.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:flex-1 bg-[#25D366] hover:bg-[#20ba59] text-white py-2.5 sm:py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-all active:scale-95 min-h-[42px]"
+                  className="w-full sm:flex-1 bg-[#25D366] hover:bg-[#20ba59] text-white py-3 sm:py-3.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-all active:scale-95 min-h-[46px]"
                 >
-                  <span className="material-symbols-outlined text-sm">chat</span>
+                  <span className="material-symbols-outlined text-base">chat</span>
                   <span>Buy via WhatsApp</span>
                 </a>
 
-                <button
-                  onClick={() => onToggleWishlist(product.id)}
-                  className={`w-full sm:w-auto px-3.5 py-2.5 sm:py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors active:scale-95 min-h-[42px] border ${
-                    isWishlisted
-                      ? 'bg-rose-50 border-rose-200 text-rose-700'
-                      : 'bg-[#fcf9f4] border-[#d4c3bc] text-[#250f03] hover:border-rose-400'
-                  }`}
-                  title={isWishlisted ? "Remove from wishlist" : "Save to wishlist"}
-                >
-                  <span
-                    className="material-symbols-outlined text-base text-rose-600"
-                    style={isWishlisted ? { fontVariationSettings: "'FILL' 1" } : undefined}
+                <div className="grid grid-cols-2 sm:flex items-center gap-2">
+                  <button
+                    onClick={() => onToggleWishlist(product.id)}
+                    className={`w-full sm:w-auto px-4 py-3 sm:py-3.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors active:scale-95 min-h-[46px] border ${
+                      isWishlisted
+                        ? 'bg-rose-50 border-rose-200 text-rose-700'
+                        : 'bg-[#fcf9f4] border-[#d4c3bc] text-[#250f03] hover:border-rose-400'
+                    }`}
+                    title={isWishlisted ? "Remove from wishlist" : "Save to wishlist"}
                   >
-                    favorite
-                  </span>
-                  <span>{isWishlisted ? 'Saved' : 'Wishlist'}</span>
-                </button>
+                    <span
+                      className="material-symbols-outlined text-lg text-rose-600"
+                      style={isWishlisted ? { fontVariationSettings: "'FILL' 1" } : undefined}
+                    >
+                      favorite
+                    </span>
+                    <span>{isWishlisted ? 'Saved' : 'Wishlist'}</span>
+                  </button>
 
-                <button
-                  onClick={() => {
-                    onCustomize(product);
-                    onClose();
-                  }}
-                  className="w-full sm:w-auto px-4 py-2.5 sm:py-3 bg-[#250f03] hover:bg-[#3d1905] text-[#ffdbca] rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors active:scale-95 min-h-[42px]"
-                >
-                  <span className="material-symbols-outlined text-sm">tune</span>
-                  <span>Customize</span>
-                </button>
+                  <button
+                    onClick={() => {
+                      onCustomize(product);
+                      onClose();
+                    }}
+                    className="w-full sm:w-auto px-4 py-3 sm:py-3.5 bg-[#250f03] hover:bg-[#3d1905] text-[#ffdbca] rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors active:scale-95 min-h-[46px]"
+                  >
+                    <span className="material-symbols-outlined text-base">tune</span>
+                    <span>Customize</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -211,7 +211,7 @@ export const VastuSection: React.FC<VastuSectionProps> = ({ onOpenModal }) => {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] text-white px-3.5 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shrink-0 shadow-xs active:scale-95 min-h-[40px]"
+                className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] text-white px-3.5 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shrink-0 shadow-xs active:scale-95 min-h-[44px]"
               >
                 <span className="material-symbols-outlined text-sm">chat</span>
                 <span>Send Blueprint</span>

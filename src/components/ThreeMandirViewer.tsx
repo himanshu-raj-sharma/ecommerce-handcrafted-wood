@@ -448,19 +448,26 @@ export const ThreeMandirViewer = React.forwardRef<ThreeMandirViewerRef, ThreeMan
       let touchStartY = 0;
       let isVerticalScroll = false;
       let touchEvaluated = false;
+      let initialPinchDist = 0;
+      let initialCameraZ = 6.2;
 
       const handleTouchStart = (e: TouchEvent) => {
-        if (e.touches.length > 0) {
+        if (e.touches.length === 1) {
           touchStartX = e.touches[0].clientX;
           touchStartY = e.touches[0].clientY;
           isVerticalScroll = false;
           touchEvaluated = false;
           onPointerDown(touchStartX, touchStartY);
+        } else if (e.touches.length === 2) {
+          const dx = e.touches[0].clientX - e.touches[1].clientX;
+          const dy = e.touches[0].clientY - e.touches[1].clientY;
+          initialPinchDist = Math.hypot(dx, dy);
+          initialCameraZ = camera.position.z;
         }
       };
 
       const handleTouchMove = (e: TouchEvent) => {
-        if (e.touches.length > 0) {
+        if (e.touches.length === 1) {
           const curX = e.touches[0].clientX;
           const curY = e.touches[0].clientY;
 
@@ -480,9 +487,18 @@ export const ThreeMandirViewer = React.forwardRef<ThreeMandirViewerRef, ThreeMan
 
           if (isVerticalScroll) return;
           onPointerMove(curX, curY);
+        } else if (e.touches.length === 2 && initialPinchDist > 0) {
+          const dx = e.touches[0].clientX - e.touches[1].clientX;
+          const dy = e.touches[0].clientY - e.touches[1].clientY;
+          const dist = Math.hypot(dx, dy);
+          const factor = initialPinchDist / dist;
+          camera.position.z = THREE.MathUtils.clamp(initialCameraZ * factor, 3.5, 9.5);
         }
       };
-      const handleTouchEnd = () => onPointerUp();
+      const handleTouchEnd = () => {
+        initialPinchDist = 0;
+        onPointerUp();
+      };
 
       dom.addEventListener('mousedown', handleMouseDown);
       window.addEventListener('mousemove', handleMouseMove);

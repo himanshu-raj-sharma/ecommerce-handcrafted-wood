@@ -83,12 +83,12 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
         </div>
 
         {/* Quick Placement Filter Bar (Mobile-friendly horizontal scroll) */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1.5 -mx-4 px-4 sm:mx-0 sm:px-0">
           {['All', 'Wall Mount', 'Floor Standing', 'Corner Unit'].map((placementOption) => (
             <button
               key={placementOption}
               onClick={() => setSelectedPlacement(placementOption)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all shrink-0 active:scale-95 ${
+              className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all shrink-0 active:scale-95 min-h-[42px] flex items-center justify-center ${
                 selectedPlacement === placementOption
                   ? 'bg-[#250f03] text-[#fed65b] shadow-xs'
                   : 'bg-[#f7f2ea] text-[#50443f] border border-[#d4c3bc] hover:border-[#735c00]'
@@ -110,7 +110,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
               <select
                 value={selectedWood}
                 onChange={(e) => setSelectedWood(e.target.value)}
-                className="w-full bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[42px]"
+                className="w-full bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[46px]"
               >
                 <option value="All">All Timbers</option>
                 <option value="Solid Teak">Solid Teak (Sagwan)</option>
@@ -127,7 +127,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
               <select
                 value={selectedPlacement}
                 onChange={(e) => setSelectedPlacement(e.target.value)}
-                className="w-full bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[42px]"
+                className="w-full bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[46px]"
               >
                 <option value="All">All Placements</option>
                 <option value="Wall Mount">Wall Mount (Apartment)</option>
@@ -144,7 +144,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
               <select
                 value={selectedSize}
                 onChange={(e) => setSelectedSize(e.target.value)}
-                className="w-full bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[42px]"
+                className="w-full bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[46px]"
               >
                 <option value="All">All Sizes</option>
                 <option value="Compact < 3ft">Compact (&lt; 36&quot;)</option>
@@ -161,7 +161,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as 'featured' | 'price-asc' | 'price-desc')}
-                className="w-full bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[42px]"
+                className="w-full bg-[#fcf9f4] border border-[#d4c3bc] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#250f03] focus:outline-none focus:border-[#735c00] min-h-[46px]"
               >
                 <option value="featured">Featured First</option>
                 <option value="price-asc">Price: Low to High</option>
@@ -238,7 +238,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                     {product.height} H
                   </div>
 
-                  {/* Wishlist Heart Toggle Button */}
+                  {/* Wishlist Heart Toggle Button (Thumb-friendly 44x44px target) */}
                   <button
                     type="button"
                     onClick={(e) => {
@@ -247,14 +247,14 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                     }}
                     aria-label={wishlistIds.includes(product.id) ? "Remove from wishlist" : "Add to wishlist"}
                     title={wishlistIds.includes(product.id) ? "Saved in Wishlist (Click to remove)" : "Save to Wishlist"}
-                    className={`absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 shadow-md active:scale-90 z-10 ${
+                    className={`absolute top-2.5 right-2.5 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center transition-all duration-200 shadow-md active:scale-90 z-10 ${
                       wishlistIds.includes(product.id)
                         ? 'bg-white text-rose-600 hover:bg-rose-50 hover:scale-110'
-                        : 'bg-[#fcf9f4]/85 backdrop-blur-xs text-[#50443f] hover:text-rose-600 hover:bg-white'
+                        : 'bg-[#fcf9f4]/90 backdrop-blur-xs text-[#50443f] hover:text-rose-600 hover:bg-white'
                     }`}
                   >
                     <span
-                      className="material-symbols-outlined text-xl transition-colors"
+                      className="material-symbols-outlined text-2xl transition-colors"
                       style={wishlistIds.includes(product.id) ? { fontVariationSettings: "'FILL' 1" } : undefined}
                     >
                       favorite
@@ -292,7 +292,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                       <span className="text-[#50443f]">Sacred Bells:</span>
                       <button
                         onClick={() => templeBell.playBellTone()}
-                        className="font-semibold text-[#735c00] hover:underline flex items-center gap-1 cursor-pointer"
+                        className="font-semibold text-[#735c00] hover:underline flex items-center gap-1 cursor-pointer py-1"
                         title="Click to hear brass bell tone"
                       >
                         <span className="material-symbols-outlined text-xs">notifications_active</span>
@@ -321,7 +321,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                     <div className="flex items-center gap-2">
                       <button
                         onClick={() => onSelectProduct(product)}
-                        className="px-3 py-2 text-xs font-semibold text-[#250f03] border border-[#d4c3bc] hover:border-[#735c00] rounded-xl transition-colors min-h-[38px] active:scale-95"
+                        className="px-3.5 py-2.5 text-xs font-semibold text-[#250f03] border border-[#d4c3bc] hover:border-[#735c00] rounded-xl transition-colors min-h-[42px] active:scale-95 flex items-center justify-center"
                       >
                         Details
                       </button>
@@ -332,7 +332,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-[#25D366] hover:bg-[#20ba59] text-white px-3 sm:px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all active:scale-95 min-h-[38px]"
+                        className="bg-[#25D366] hover:bg-[#20ba59] text-white px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all active:scale-95 min-h-[42px]"
                       >
                         <span className="material-symbols-outlined text-sm">chat</span>
                         <span>Inquire</span>

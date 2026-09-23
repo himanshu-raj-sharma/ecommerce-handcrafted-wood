@@ -92,8 +92,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Product Image Frame */}
               <div className="aspect-4/3 sm:aspect-4/5 w-full overflow-hidden relative bg-[#ede6dc]">
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw=s1600"
+                  srcSet="https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw=s1000 1000w, https://lh3.googleusercontent.com/aida-public/AB6AXuAw2uu6wVRNjmOb04kSS3vh77azSEZdu36NT7ZlXq-62kqsApYyNTYqfAXNtuAPb0MJF9S1DKM4zqZ7b6vKXrCDjpiKad1_Die3Ca7BU7QoIS-cXJ8o-3AdqHE2dzWtvsrrhJ89GVwnY2ankrsB9jhz8MharcKXse1bydy6KB3UPylTH9y8f_5tV0lEgsTzzU7jpRySh9B8G6CliqApsFnHyYOWjOIRTam-eI0IZk0B8Tcbef7XkYpLcw=s1600 1600w"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 700px"
                   alt="The Vaikuntha Grand Shikhara Mandir"
+                  loading="eager"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
